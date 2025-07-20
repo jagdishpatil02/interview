@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IteratingAndTransforming</title>
+</head>
+
+<body>
+    <script>
+        let fruits = ["apple", "banana", "mango", "cherry"];
+        let numberArray = [1,2,3,4,5,6];
+
+
+        // foreach: executes functions on each element
+        fruits.forEach((fruit) => {
+            console.log("foreach", fruit);
+        });
+
+        // map: creates a new array with results of function
+
+         let numberedArrayBy2  = numberArray.map(number => number * 2);
+         console.log("numberedArrayBy2", numberedArrayBy2)
+
+         // filter: creates a new array with elements meeting condition
+
+         let filteredArr =  numberArray.filter(number => number > 2);
+         console.log("filteredArr", filteredArr)
+        
+         // reduce: reduces array to single value
+
+         let reducedArrayWithSum = numberArray.reduce((acc, cur) => acc + cur, 0);
+         console.log("reducedArrayWithSum", reducedArrayWithSum);
+
+         // some: check atleast one matches with condition
+
+         let someArray = numberArray.some(number => number > 2);
+         console.log("someArray", someArray)
+
+        // every: check if all matches with condition
+         let everyArray = numberArray.every(number => number > 2);
+         console.log("everyArray", everyArray)
+    </script>
+</body>
+
+</html>

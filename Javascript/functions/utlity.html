@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>utlity</title>
+</head>
+
+<body>
+
+    <script>
+        let numberArr = [1, 2, 3];
+        let stringArr = ["hello", "hi"];
+
+        // concat: combine two or more arrays
+        let concatNatedArr = numberArr.concat(stringArr);
+        console.log("concatNatedArr", concatNatedArr)
+
+        // join: join elements into string
+        let joinedArr = stringArr.join('');
+        console.log("joinedArr", joinedArr)
+
+        // reverse: Reverses array elements in place
+        let revesedArr = numberArr.reverse();
+        console.log("revesedArr", revesedArr)
+
+        // sort: Sorts elements (default lexicographical)
+
+        let sortArr = numberArr.sort();
+        console.log("sortArr", sortArr)
+
+        // fill: Fills elements with a value
+        let filledArr = numberArr.fill(0, 1, 4);
+        console.log("filledArr", filledArr)
+
+        // copyWithin: Copies elements inside the array
+        let copyWithinArr = numberArr.copyWithin(1, 1, 1);
+        console.log("copyWithinArr", copyWithinArr)
+
+        // entries: Iterator of key value pairs
+        for (let [index, value] of stringArr.entries()) {
+            console.log(index, value);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

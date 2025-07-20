@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>accessingAndSearching</title>
+  </head>
+  <body>
+    <script>
+      let accessAndSearchArr = [1, 2, 2, 4, 5];
+
+      // find the first index of an element
+      let firstIndex = accessAndSearchArr.indexOf(2);
+      console.log("first index", firstIndex);
+
+      // check if element exists
+      let elementsExist = accessAndSearchArr.includes(2);
+      console.log("elementsExist", elementsExist);
+
+      // returns the first element of matching a function
+      let findArrGreaterThan2 = accessAndSearchArr.find((arr) => arr > 2);
+      console.log("findIndexOfArr", findArrGreaterThan2);
+
+      // return index of an element matching a function
+      let findIndexOfArrGreaterThan2 = accessAndSearchArr.findIndex(
+        (arr) => arr > 2
+      );
+      console.log("findIndexOfArrGreaterThan2", findIndexOfArrGreaterThan2);
+    </script>
+  </body>
+</html>

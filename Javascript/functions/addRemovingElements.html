@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addRemovingElements</title>
+</head>
+
+<body>
+
+    <script>
+        let addRemoveArr = [1, 2, 3, 4, 5];
+
+        // Adding elements to the end of the addRemoveArr
+        addRemoveArr.push(6)
+        console.log("After push:", addRemoveArr); // [1, 2, 3, 4, 5, 6]
+        
+        // removing the last element of the addRemoveArr
+        addRemoveArr.pop();
+        console.log("After pop:", addRemoveArr); // [1, 2, 3, 4, 5]
+
+        // Adding elements to the beginning of the addRemoveArr
+        addRemoveArr.unshift(0);
+        console.log("After unshift:", addRemoveArr); // [0, 1, 2, 3, 4, 5]
+        
+        // removing the first element of the addRemoveArr
+        addRemoveArr.shift(); 
+        console.log("After shift:", addRemoveArr); // [1, 2, 3, 4, 5]
+
+    </script>
+</body>
+
+</html>
