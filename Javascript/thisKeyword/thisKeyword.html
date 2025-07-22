@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this keyword</title>
+  </head>
+  <body>
+    <script>
+      // implicit binding refers to the object where this has been invoked
+
+      let user = {
+        name: "jagdish",
+        printName: function () {
+          console.log(this.name);
+        },
+      };
+      user.printName();
+
+      // through explicit binding you can set the value of this call with call, apply and bind
+
+      function sayHello() {
+        console.log("my name is", this.name);
+      }
+
+      let person = { name: "jagdish" };
+      sayHello.call(person);
+
+      // constructor binding: when a function is called with new keyword this refers to newly created object
+
+      function Car(model) {
+        this.model = model;
+      }
+
+      let myCar = new Car("Punch");
+      console.log(myCar);
+
+      // global binding: when none of the rules match and function is called standalone this refers to global object
+
+      function sayName() {
+        console.log(this);
+      }
+
+      sayName();
+
+      /// Arrow functions(lexical binding): Arrow function do not have this, this is captured from the surrounding (lexical)
+      // scope at the time of arrow  function is defined
+
+      let obj = {
+        value: 42,
+        printValue: function () {
+          let fn = () => console.log(this.value);
+          fn();
+        },
+      };
+
+      obj.printValue();
+    </script>
+  </body>
+</html>

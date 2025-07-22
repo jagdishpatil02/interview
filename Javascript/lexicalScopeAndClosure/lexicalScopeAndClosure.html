@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical scope and closure</title>
+  </head>
+  <body>
+    <script>
+      // lexical scope; Javascript identifies the variables by physical presence of its location, default it tried to
+      // find variables in current scope, if not found it will go to outward scope and then the global scope
+
+      function outer() {
+        let outVar = "I am outside";
+
+        function inner() {
+          console.log(outVar);
+        }
+
+        inner();
+      }
+
+      outer();
+
+      // clousure: clousre is formed when function remebers and access variables from its lexical env even after the
+      // outer function that created those variables has finisghed running
+
+      function makeCounter() {
+        let count = 0;
+        return function () {
+          count++;
+          return count;
+        };
+      }
+
+      const counter = makeCounter();
+      console.log(counter());
+      console.log(counter());
+    </script>
+  </body>
+</html>
