@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object methods</title>
+  </head>
+  <body>
+    <script>
+      let person = {
+        name: "jagdish",
+        age: 30,
+        employeeid: 30555,
+      };
+
+      // Object.keys(obj): Returns array of property names
+      let objectKeys = Object.keys(person);
+      console.log("objectKeys", objectKeys);
+
+      // Object.values(obj): Returns array of property values
+      let objectValues = Object.values(person);
+      console.log("objectValues", objectValues);
+
+      // Object.entries(obj): Returns array of [key, value] pairs
+      let objectKeyAndValues = Object.entries(person);
+      console.log("objectKeyAndValues", objectKeyAndValues);
+
+      // Object.assign(target, ...sources): Copies properties between objects
+      let copiedObject = {};
+      Object.assign(copiedObject, person);
+      console.log("copiedObject", copiedObject);
+
+      // Object.hasOwnProperty(key): Checks if a key is a direct property
+
+      let objectHasName = Object.hasOwnProperty("name");
+      console.log("objectHasName", objectHasName);
+
+      // prototypes
+
+      function Animal(name) {
+        this.name = name;
+      }
+
+      Animal.prototype.speak = function () {
+        console.log(`${this.name} makes a sound`);
+      };
+
+      const dog = new Animal("Rex");
+      dog.speak();
+    </script>
+  </body>
+</html>
