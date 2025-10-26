@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rest and spread</title>
+  </head>
+  <body>
+    <script>
+      // rest operator: combines array and object into one
+
+      const [first, ...rest] = [10, 20, 30];
+      console.log("first", first);
+      console.log("rest", rest);
+
+      // spread operator: elements of an array or properties of an object.
+
+      const arr1 = [1, 2, 3];
+      const arr2 = [10, 20, ...arr1];
+      console.log("arr20", arr2);
+    </script>
+  </body>
+</html>
