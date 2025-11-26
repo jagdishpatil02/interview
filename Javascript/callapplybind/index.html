@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "jagdish",
+      };
+
+      function greet(greetings, city) {
+        console.log(`${greetings}, i am ${this.name} from ${city}`);
+      }
+
+      greet.call(person, "Hello", "Pune");
+      greet.apply(person, ["Hello", "Pune"]);
+
+      const bindEx = greet.bind(person, "Hello", "Mumbai");
+      bindEx();
+    </script>
+  </body>
+</html>
