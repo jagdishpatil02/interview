@@ -20,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HighLightDirective } from '../shared/directives/highlight.directive';
 import { HomeService } from './home.service';
 import { HomeChildComponent } from './home-child/home-child.component';
+import { SenderComponent } from '../sender/sender.component';
+import { ReceiverComponent } from '../receiver/receiver.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -37,6 +39,8 @@ import { HomeChildComponent } from './home-child/home-child.component';
     HighLightDirective,
     NgTemplateOutlet,
     HomeChildComponent,
+    SenderComponent,
+    ReceiverComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
