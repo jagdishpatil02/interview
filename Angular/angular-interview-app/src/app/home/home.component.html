@@ -67,3 +67,16 @@ count: {{ count }} <button (click)="setCount()">increment</button>
 <div *ngFor="let user of users">
   <p>{{ user.name }} - {{ user.email }}</p>
 </div>
+
+<h3>Accessing elements</h3>
+
+<input type="text" value="this is accessed using viewchild" #myinput />
+<p id="renderer">styled using renderer 2</p>
+value accessed using global var
+<input type="text" #tempInput />
+<button (click)="getValue(tempInput.value)">get value</button>
+
+<app-home-child
+  [user]="parentUser"
+  (messageEvent)="receivedMessage($event)"
+></app-home-child>
