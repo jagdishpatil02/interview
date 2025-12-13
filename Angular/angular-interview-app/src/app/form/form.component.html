@@ -1,1 +1,30 @@
-<p>form works!</p>
+<h4>Template driven form</h4>
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <input type="email" ngModel required name="email" />
+  <input type="text" ngModel required name="password" />
+  <button type="submit">Submit</button>
+</form>
+
+<h4>Reactive form</h4>
+
+<form [formGroup]="rForm" (ngSubmit)="submitRform()">
+  <input type="email" formControlName="email" />
+  <div *ngIf="rForm.get('email')?.invalid && rForm.get('email')?.touched">
+    <small *ngIf="rForm.get('email')?.errors?.['required']"
+      >Email is required</small
+    >
+    <small *ngIf="rForm.get('email')?.errors?.['email']"
+      >Invalid Email format</small
+    >
+  </div>
+  <input type="password" formControlName="password" />
+  <div *ngIf="rForm.get('password')?.invalid && rForm.get('password')?.touched">
+    <small *ngIf="rForm.get('password')?.errors?.['required']"
+      >Password is required</small
+    >
+    <small *ngIf="rForm.get('password')?.errors?.['minlength']"
+      >Invalid Password format</small
+    >
+  </div>
+  <button type="submit" [disabled]="rForm.invalid">Submit</button>
+</form>
