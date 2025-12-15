@@ -1,5 +1,5 @@
 <p>http works!</p>
-<ul *ngFor="let item of response">
+<ul *ngFor="let item of response; trackBy: trackbyUserId">
   {{
     item.name
   }}

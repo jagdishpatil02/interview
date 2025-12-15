@@ -16,4 +16,8 @@ export class HttpComponent implements OnInit {
   ngOnInit() {
     this.httpService.getUsers().subscribe((data) => (this.response = data));
   }
+
+  trackbyUserId(index: number, item: any) {
+    return item.id;
+  }
 }

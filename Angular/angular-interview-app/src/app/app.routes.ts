@@ -16,4 +16,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./http/http.component').then((c) => c.HttpComponent),
   },
+  {
+    path: 'signals',
+    loadComponent: () =>
+      import('./signals/signals.component').then((c) => c.SignalsComponent),
+  },
 ];
