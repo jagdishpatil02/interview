@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <script>
+      // simple promise
+      const result = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("This is simple promise");
+        }, 5000);
+      });
+
+      result.then((v) => console.log("value", v));
+
+      // promise all: waits for all promises to resolve if any of the fails it fails
+
+      const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("p1 is resolved");
+        }, 5000);
+      });
+
+      const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("p2 is resolved");
+        }, 1000);
+      });
+
+      Promise.all([p1, p2]).then((values) => console.log(values));
+
+      // promise race: returns first completed promise (success or failure)
+      Promise.race([p1, p2]).then((values) => console.log(values));
+
+      // promise any: returns the first fullfilled promise
+      Promise.any([p1, p2]).then((values) => console.log(values));
+
+      //     allSettled Promise.allSettled() is a JavaScript promise method that waits for all promises to finish,
+      // no matter whether they succeed or fail.Unlike Promise.all(), it never rejects.
+
+      Promise.allSettled([p1, p2]).then((values) => console.log(values));
+    </script>
+  </body>
+</html>
