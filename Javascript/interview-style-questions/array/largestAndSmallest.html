@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function largest(arr) {
+        let largestnum = arr[0];
+
+        for (let num of arr) {
+          if (num > largestnum) {
+            largestnum = num;
+          }
+        }
+
+        return largestnum;
+      }
+
+      function smallest(arr) {
+        let smallest = arr[0];
+
+        for (let num of arr) {
+          if (num < smallest) {
+            smallest = num;
+          }
+        }
+
+        return smallest;
+      }
+
+      console.log(largest([3, 4, 5]));
+      console.log(smallest([3, 4, 5]));
+    </script>
+  </body>
+</html>

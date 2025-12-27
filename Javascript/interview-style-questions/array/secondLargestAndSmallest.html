@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second largest and smallest</title>
+  </head>
+  <body>
+    <script>
+      function secondLargestArr(arr) {
+        let max = -Infinity;
+        let second = -Infinity;
+
+        for (let n of arr) {
+          if (n > max) {
+            second = max;
+            max = n;
+          } else if (n > second && n !== max) {
+            second = n;
+          }
+        }
+        return second;
+      }
+
+      function secondSmallestArr(arr) {
+        let max = Infinity;
+        let second = Infinity;
+
+        for (let n of arr) {
+          if (n < max) {
+            second = max;
+            max = n;
+          } else if (n < second && n !== max) {
+            second = n;
+          }
+        }
+        return second;
+      }
+
+      console.log(secondLargestArr([2, 3, 4]));
+      console.log(secondSmallestArr([1, 2, 3]));
+    </script>
+  </body>
+</html>
