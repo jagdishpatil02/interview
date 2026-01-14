@@ -21,7 +21,7 @@ export default function Accordian() {
       {accordianData.map((acc, index) => (
         <div key={index} className="bg-gray-300 w-[20rem] ">
           <button
-            className="bg-green-500 w-full"
+            className="bg-green-600 w-full"
             onClick={() => handleClick(index)}
           >
             {acc.title}
