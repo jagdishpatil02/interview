@@ -9,7 +9,7 @@ export default function Pagination() {
   useEffect(() => {
     async function fetchData() {
       const responseData = await fetch(
-        `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`
+        `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`,
       );
       const res = await responseData.json();
       setPosts(res);
@@ -56,7 +56,7 @@ export default function Pagination() {
             >
               {pageNumber}
             </button>
-          )
+          ),
         )}
         <button
           onClick={NextPage}
